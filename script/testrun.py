@@ -9,7 +9,16 @@ import time
 from whill import ComWHILL
 
 whill = ComWHILL(port='COM5')
-result = whill.send_joystick(int(100), int(0))
+
+whill.hold_joy(int(10), int(0))
+# whill.unhold_joy()
+
 # result = whill.send_power_on()
 # result = whill.receive_data()
-print(result)
+# print(result)
+
+# while True:
+#     whill.send_joystick(int(100), int(0))
+#     time.sleep(1)
+
+# whill.send_joystick(int(100), int(0))
