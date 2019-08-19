@@ -10,12 +10,13 @@ from whill import ComWHILL
 
 whill = ComWHILL(port='COM5')
 interval_msec = 1000
+interval_sec = interval_msec / 1000
 
-with open('data/2019-08-11-18-02-20.csv', 'r') as f:
+with open('data/2019-08-15-05-41-37.csv', 'r') as f:
     line = f.readline()
     while line:
         joy = list(map(int, line.strip().split(',')))
         print(joy)
         whill.hold_joy(int(joy[0]), int(joy[1]), interval_msec)
-        time.sleep(interval_msec / 1000)
+        time.sleep(interval_sec)
         line = f.readline()
